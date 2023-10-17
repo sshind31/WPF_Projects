@@ -1,0 +1,19 @@
+﻿<Window x:Class="SixthApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SixthApp"
+        xmlns:sv="clr-namespace:SixthApp.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <sv:ViewModelBase x:Key="VM"/>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource VM}}">
+        <Grid DataContext="{Binding Path=wantedView}">
+            
+        </Grid>
+        
+    </Grid>
+</Window>
