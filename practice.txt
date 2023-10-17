@@ -1,0 +1,87 @@
+using System;
+class HelloWorld {
+    public int Id;
+    public string Name;
+  static void Main() {
+
+    	int ? a=null; //by '?' we can set any value type to null, without '?' we can't do that
+    
+	Console.WriteLine("Enter Name :");
+    
+	String Namee=Console.ReadLine(); //readline only gives string type values
+    	
+	HelloWorld h1=new HelloWorld{Name="Saurabh"};
+	
+	Console.WriteLine($"Hello World {h1.Name}"); //Hello World Saurabh
+    	
+	Console.WriteLine("Hello World {0}",h1.Name); //Hello World Saurabh
+    
+	Console.WriteLine(null ?? "Saurabh"); //Saurabh
+
+	Console.WriteLine("Saurabh" ?? null); //Saurabh
+
+	int [] arr= new int[4]; //here is 3 is size of array
+
+	int [] arr= new int[]{1,2,4,5,7,3,8,3}; 
+	//here size not needed to give if given only that much amount of values will have to write else error will get thrown
+	
+	
+  }
+}
+
+
+
+public delegate void trialDele1(string nn);
+
+class triual
+{
+    private int a;
+    public trialDele1 d1=new trialDele1(printMethod1);
+    public trialDele1 d2=new trialDele1(printMethod2);
+    public string guru;
+    public triual(string g)
+    {
+        this.guru=g;
+    }
+    public int A
+    {
+        private set
+        {
+            a=20;
+        }
+        get{
+            Console.WriteLine("Hello World");
+            return a;
+        }
+    }
+    public static void printMethod1(string nn)
+    {
+        Console.WriteLine($"Hello World your delegate is {nn}");
+    }
+    [Obsolete("Don't use this method")]
+    public static void printMethod2(string nn)
+    {
+        Console.WriteLine($"Hello World your delegate is {nn} and {nn}");
+    }
+    
+    
+}
+class HelloWorld:triual {
+    internal int Id{get;set;}
+    public string Name{get;set;}
+    public HelloWorld(string Name) : base(Name)
+    {
+        
+    }
+  
+    static void Main()
+    {
+        Console.WriteLine("Enter Name :");
+        string Namee=Console.ReadLine();
+      
+        HelloWorld h1=new HelloWorld("Hello");
+        //Console.WriteLine(h1.A);
+        h1.d1("Saurabh");
+        h1.d2("Dhananjay");
+    }
+}

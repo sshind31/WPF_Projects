@@ -1,0 +1,38 @@
+using System;
+public interface Hello
+{
+    static int b;
+    void print();
+}
+
+public class Second
+{
+    private int a;
+    public int A   // property
+      {
+        get { return a; }
+        set { a = value; }
+      }
+}
+
+public class HelloWorld:Second,Hello
+{
+    public void print()
+    {
+        Console.WriteLine("Hello");
+    }
+    public void print(string str)
+    {
+        Console.WriteLine("Hello "+str);
+    }
+    public static void Main(string[] args)
+    {
+        Hello.b=5;
+        Hello h1=new HelloWorld();
+        HelloWorld h2=new HelloWorld();
+        h1.print();
+        h2.print("Saurabh");
+        h2.A=65;
+        Console.WriteLine("Hello "+h2.A);
+    }
+}

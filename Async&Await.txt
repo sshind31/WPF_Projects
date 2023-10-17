@@ -1,0 +1,52 @@
+async method will allow follwing methods to execute parallely
+await stops further execution of code until its completion
+
+
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+class HelloWorld {
+  static void Main() {
+      prnt1();
+    Console.WriteLine("Hello World");
+    Console.ReadLine();
+  }
+  public static async void prnt1()
+  {
+      await prnt2();
+      prnt3();
+      await prnt4();
+  }
+  public static async Task prnt2()
+  {
+      await Task.Run(() =>
+            {
+                Console.WriteLine("School prnt2");
+                Thread.Sleep(3000);
+                Console.WriteLine("School prnt2 finished");
+            });
+  }
+  public static async Task prnt3()
+  {
+      await Task.Run(() =>
+            {
+                Thread.Sleep(3000);
+                Console.WriteLine("School prnt3");
+            });
+  }
+  public static async Task prnt4()
+  {
+      await Task.Run(() =>
+            {
+                Console.WriteLine("School prnt4");
+            });
+  }
+}
+
+
+Hello World
+School prnt2
+School prnt2 finished
+School prnt4
+School prnt3

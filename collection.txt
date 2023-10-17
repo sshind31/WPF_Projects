@@ -1,0 +1,45 @@
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+namespace trial{
+    class Student
+    {
+        public int ID;
+        public string Name;
+        public string Gender;
+        public int percentage;
+    }
+    class HelloWorld {
+        public static Dictionary<int, Student> dict = new Dictionary<int, Student>();
+        public static List<Student> lst = new List<Student>();
+        static void Main() 
+        {
+            Student [] StudentList=new Student[7];
+            StudentList[0]=new Student(){ID=1,Name="Saurabh",Gender="Male",percentage=61};
+            StudentList[1]=new Student(){ID=2,Name="Dhannajay",Gender="Male",percentage=65};
+            StudentList[2]=new Student(){ID=3,Name="Kalyani",Gender="Female",percentage=75};
+            StudentList[3]=new Student(){ID=4,Name="Vivek",Gender="Male",percentage=40};
+            StudentList[4]=new Student(){ID=5,Name="Nikita",Gender="Female",percentage=80};
+            StudentList[5]=new Student(){ID=6,Name="Ninad",Gender="Male",percentage=25};
+            StudentList[6]=new Student(){ID=7,Name="Rahul",Gender="Male",percentage=55};
+            for (int i=0;i<StudentList.Length;i++)
+            {
+                dict.Add(StudentList[i].ID,StudentList[i]);
+            }
+            for (int i=0;i<StudentList.Length;i++)
+            {
+                ListofStudent.Add(StudentList[i]);
+            }
+            foreach(Student s in ListofStudent)
+            {
+                Console.WriteLine($"{s.Name} with RollNo={s.ID} haviing percentage={s.percentage}");
+            }
+            foreach(KeyValuePair<int,Student> s in dict)
+            {
+                Console.WriteLine($"{s.Value.Name} with RollNo={s.Value.ID} haviing percentage={s.Value.percentage}");
+            }
+            Console.WriteLine(dict);
+        }
+        
+    }
+}

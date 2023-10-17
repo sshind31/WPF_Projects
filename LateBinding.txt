@@ -1,0 +1,53 @@
+using System;
+using System.Reflection;
+namespace trial{
+class Hello
+{
+    // private string Name;
+    // public Hello(string a)
+    // {
+    //     Name=a;
+    // }
+    public int calculateDiameter(int radius)
+    {
+        return radius*2;
+    }
+}
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine();
+	
+	//It will give currently in execution assembly to a1
+    	Assembly a1=Assembly.GetExecutingAssembly();
+    	
+	//by specifying NamespaceName.ClassName we can get type in t1
+	Type t1=a1.GetType("trial.Hello");
+    	
+	//It will create Instance of parameterless constructor class
+	//If we want to create Instance of class with parameterized constructor
+	//then we have to give parameters of constructor as object array as second arg
+	//It will also throw exception
+	object o1=Activator.CreateInstance(t1); //CreateInstance(Type,object[])
+    	
+	//by specifying MethodName will give method info to m1
+	MethodInfo m1=t1.GetMethod("calculateDiameter");
+    	
+	object[] ip=new object[]{(object)12};
+    	
+	//by specifying object and MethodArgs as object[] will give o/p
+	object Result=m1.Invoke(o1,ip);
+    	
+	Console.WriteLine((int)Result);
+  }
+}
+}
+
+public static object ExecuteMethod()
+        {
+            Assembly a1=Assembly.GetExecutingAssembly();
+            Type t1=a1.GetType("trial.Hello");
+            object o1=Activator.CreateInstance(t1);
+            MethodInfo m1=t1.GetMethod("calculateDiameter");
+            object[] ip=new object[]{(object)12};
+            return m1.Invoke(o1,ip);
+        }

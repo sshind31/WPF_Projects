@@ -1,0 +1,9 @@
+Predicate<string> check=Student.CheckEquality;
+            Console.WriteLine(check("Say"));//False
+class Student
+    {
+        public static bool CheckEquality(string str1)
+        {
+            return str1.Equals(str1.ToUpper());
+        }
+    }

@@ -1,0 +1,37 @@
+using System;
+using System.Reflection;
+namespace trial{
+
+//This 'T' is to specify on which datatype class is going to perform its operations
+//It means wherever we specify T it will indicate that we have abilty to specify datatype while calling the method or creating instance of class
+
+    class Hello1<T>
+    {
+        public static void calculateDiameter(T radius)
+        {
+            Console.WriteLine(radius);
+        }
+        public void calculate(T radius)
+        {
+            Console.WriteLine(radius);
+        }
+    }
+    class Hello2
+    {
+        public static void calculateDiameter<T>(T radius)
+        {
+            Console.WriteLine(radius);
+        }
+    }
+    class HelloWorld {
+        static void Main() {
+            Console.WriteLine();
+            Hello1<int>.calculateDiameter(12);
+            Hello2.calculateDiameter<int>(12);
+            Hello1<string> h2=new Hello1<string>();
+            //h2.calculate(12); this will throw exception because we have specified that T is string type
+            h2.calculate("12");
+            Console.WriteLine("Finally got it");
+        }
+    }
+}

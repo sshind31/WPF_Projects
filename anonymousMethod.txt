@@ -1,0 +1,14 @@
+class HelloWorld {
+        public delegate void triall();
+        public delegate void AnonymousFun();  
+        public static Dictionary<int, Student> dict = new Dictionary<int, Student>();
+        public static List<Student> ListofStudent = new List<Student>();
+        static void Main() 
+        {
+            triall t12=delegate(){
+                Console.WriteLine("Anonymous function called");
+            };
+            t12();
+        }
+        
+    }
