@@ -1,0 +1,36 @@
+Basic of C# coding
+	3	
+"Basic Tutorial
+https://www.w3schools.com/cs/index.php 
+Video Tutorial
+https://www.youtube.com/watch?v=SXmVym6L8dw&list=PLAC325451207E3105"
+
+
+
+
+Baic WPF (using DevExpress)
+	2	
+https://www.youtube.com/watch?v=03D3xWArutU&list=PLI-F7ydFjNpC2lJ6UI-ZA2FnwR3fiP1IZ
+
+
+
+
+MVVM architecture
+	1	
+"https://www.c-sharpcorner.com/uploadfile/nipuntomar/mvvm-in-wpf/#:~:text=MVVM%20(Model%2DView%2DViewModel)&text=MVVM%20is%20a%20way%20of,together%20with%20less%20technical%20difficulties.
+https://www.youtube.com/watch?v=fZxZswmC_BY&list=PLA8ZIAm2I03hS41Fy4vFpRw8AdYNBXmNm "
+
+
+
+
+Eyeshot traning 
+	4	
+"https://documentation.devdept.com/2022/topic_000000000000558E.html
+https://www.devdept.com/support/samples "
+
+
+
+
+Exercise
+	2	
+This Exercise is to check what intern has learnt from above training.
