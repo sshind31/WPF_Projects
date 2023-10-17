@@ -1,0 +1,54 @@
+﻿<Window x:Class="FourthApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourthApp"
+        xmlns:trial="clr-namespace:FourthApp.ViewModel"
+        xmlns:convert="clr-namespace:FourthApp.Converter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <trial:EmployeeViewModel x:Key="EmployeeViewModel"/>
+        <convert:DataConverter x:Key="Converter"/>
+    </Window.Resources>
+    <Grid  DataContext="{Binding Source={StaticResource EmployeeViewModel}}" Height="419" VerticalAlignment="Top" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Full Name" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="151" HorizontalAlignment="Left" Text="{Binding Emp.Name, Mode=TwoWay}" Margin="5"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Email Id" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="151" HorizontalAlignment="Left" Text="{Binding Emp.EmailId, Mode=TwoWay}" Margin="5"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Mobile Number" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="151" HorizontalAlignment="Left" Text="{Binding Emp.MobileNo, Mode=TwoWay}" Margin="5"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Birth Date" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" SelectedDate="{Binding Emp.BirthDate, Mode=TwoWay}"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Joining Date" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" SelectedDate="{Binding Emp.JoiningDate, Mode=TwoWay}"/>
+        <Button Content="Submit" Command="{Binding SubmitCommand }" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Margin="5"/>
+        <ListView ItemsSource="{Binding Employees}" Width="Auto" Grid.Row="6" Grid.Column="1">
+            <ListView.View >
+                <GridView>
+                    <GridViewColumn Header="Full Name" DisplayMemberBinding="{Binding Name}" Width="Auto"/>
+                    <GridViewColumn  Header="Email Id" DisplayMemberBinding="{Binding EmailId}" Width="Auto"/>
+                    <GridViewColumn  Header="Mobile Number" DisplayMemberBinding="{Binding MobileNo}" Width="Auto"/>
+                    <GridViewColumn  Header="Birth Date" DisplayMemberBinding="{Binding BirthDate,Converter={StaticResource Converter}}" Width="Auto"/>
+                    <GridViewColumn  Header="Joining date" DisplayMemberBinding="{Binding JoiningDate,Converter={StaticResource Converter}}" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Window>

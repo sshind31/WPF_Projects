@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FifthApp", "FifthApp\FifthApp.csproj", "{1147633B-2483-4280-B8EF-9D96223BE0F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1147633B-2483-4280-B8EF-9D96223BE0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1147633B-2483-4280-B8EF-9D96223BE0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1147633B-2483-4280-B8EF-9D96223BE0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1147633B-2483-4280-B8EF-9D96223BE0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2549866D-70EC-462A-A5D6-767B779AC6E3}
+	EndGlobalSection
+EndGlobal

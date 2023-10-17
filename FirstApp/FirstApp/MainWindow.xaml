@@ -1,0 +1,22 @@
+﻿<Window x:Class="FirstApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="btn" HorizontalAlignment="Right"  VerticalAlignment="Center" Height="150" Width="200" BorderThickness="2" Click="Button_Click" Margin="0,140,286,129">
+            <StackPanel Orientation="Vertical">
+                <Button Name="btn1" Width="80" Height="20" Margin="5,10" Cursor="Cross" Click="Go1"/>
+                <Button Name="btn2" Width="80" Height="20" Margin="5,10" Cursor="IBeam" Click="Go2"/>
+                <Button Name="btn3" Width="80" Height="40" Margin="5,10" Cursor="Pen" Click="Go3">
+                    <Button Name="btn4" Width="60" Height="20" Margin="5" Cursor="IBeam" Click="Go4"/>
+                </Button>
+            </StackPanel>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="tbox"/>
+
+    </Grid>
+</Window>
